@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/main/main",
+    "pages/my/my",
+    "pages/edit/edit",
+    "pages/list/list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#BBDEF8",
+    "navigationBarTitleText": "kiki的杂货小铺",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap38.json"
+}

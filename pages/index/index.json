@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+      "i-button": "../../dist/button/index",
+      "i-tab-bar": "../../dist/tab-bar/index",
+      "i-tab-bar-item": "../../dist/tab-bar-item/index",
+      "order": "../../order/order",
+      "main":"../../main/main",
+      "my":"../../my/my"
+    }
+}

@@ -1,0 +1,45 @@
+<i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="tab1" title="待背回" count="3"></i-tab>
+    <i-tab key="tab2" title="已背回"></i-tab>
+    <i-tab key="tab3" title="全部" dot></i-tab>
+</i-tabs>
+<view id="tab-1" class="{{ isShow1 }}">
+  <i-card class="icard" title="这是一个产品标题" extra="¥150.00" thumb="../../image/1.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>
+  <i-card class="icard" title="这是一个产品标题" extra="¥450.00" thumb="../../image/a.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>
+  <i-card class="icard" title="这是一个产品标题" extra="¥450.00" thumb="../../image/2.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>
+  <i-card class="icard" title="这是一个产品标题" extra="¥450.00" thumb="../../image/3.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>
+  <i-card class="icard" title="这是一个产品标题" extra="¥450.00" thumb="../../image/b.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>
+  <i-card class="icard" title="这是一个产品标题" extra="¥450.00" thumb="../../image/c.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>  
+  <i-card class="icard" title="这是一个产品标题" extra="¥450.00" thumb="../../image/1.jpg">
+    <view slot="content"><span class="fontstyle">单价：¥150.00，件数：3</span></view>
+    <view slot="footer">2019-12-19</view>
+  </i-card>
+</view>
+<view id="tab-2" class="{{ isShow2 }}">
+  这是已经待会还没去拿的~
+</view>
+<view id="tab-3" class="{{ isShow3 }}">
+  这是我的历史所有订单哦~
+</view>
+<i-panel title="" style="position:fixed;bottom:0;margin-bottom:70px;width:100%">
+    <view style="padding: 15px;text-align:right;float:left;">总计：¥1500.00 </view>
+    <i-button style="float:right;width:150px;" bind:click="handleClick" type="warning" shape="circle" size="small">支付</i-button>
+</i-panel>

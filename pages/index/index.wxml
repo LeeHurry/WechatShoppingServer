@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view>
+  <view class='content'>
+    <view wx:if='{{current == "main"}}'>
+    <main id="main"/>
+    </view>
+    <view wx:if='{{current == "order"}}'>
+    <order id="order"/>
+    </view>
+    <view wx:if='{{current == "my"}}'>
+    <my id="my"/>
+    </view>
+  </view>
+    <i-tab-bar current="{{ current }}" fixed="Boolean" bindchange="handleChange">
+      <i-tab-bar-item key="main" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+      <i-tab-bar-item key="order" icon="activity" current-icon="activity_fill" dot title="订单"></i-tab-bar-item>
+      <i-tab-bar-item key="my" icon="mine" current-icon="mine_fill" count="3" title="我的"></i-tab-bar-item>
+    </i-tab-bar>
+</view>

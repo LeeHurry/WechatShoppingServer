@@ -1,0 +1,18 @@
+<view class="box {{ isShow }}">
+  <view class="head">
+  <open-data type="userAvatarUrl"></open-data>
+  <open-data type="userNickName"></open-data>
+  </view>
+</view>
+  <view class='content'>
+    <view wx:if='{{current == "edit"}}'>
+    <edit id="edit"/>
+    </view>
+    <view wx:if='{{current == "list"}}'>
+    <list id="list"/>
+    </view>
+  </view>
+<i-button class="{{ isShow }}" bind:click="ChangeBtn1">管理产品</i-button>
+<i-button class="{{ isShow }}" bind:click="ChangeBtn2">根据用户查询产品清单</i-button>
+<i-button class="{{ isShow }}" bind:click="handleClick(3)">根据产品查询用户清单</i-button>
+<i-button class="{{ isShow }}" bind:click="handleClick(4)">利润报表</i-button>

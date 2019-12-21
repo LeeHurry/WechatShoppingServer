@@ -1,0 +1,45 @@
+<i-notice-bar icon="systemprompt" loop closable>
+    已经回来啦，理货中，下次起飞日期待定哟~
+</i-notice-bar>
+<view class="box">
+  <view class='left-box'>
+    <view class="card">
+      <image src="../../image/1.jpg"></image>
+      <span class="title">这是一个商品</span>
+      <span class="money">¥150.00</span>
+      <span class="stock">剩：3/10</span>
+    </view>
+        <view class="card">
+      <image mode="widthFix" src="../../image/a.jpg"></image>
+      <span class="title">这是一个商品</span>
+      <span class="money">¥150.00</span>
+      <span class="stock">剩：3/10</span>
+    </view>
+        <view class="card">
+      <image src="../../image/3.jpg"></image>
+      <span class="title">这是一个商品</span>
+      <span class="money">¥150.00</span>
+      <span class="stock">剩：3/10</span>
+    </view>
+  </view>
+  <view class='right-box'>
+      <view class="card">
+      <image mode="widthFix" src="../../image/b.jpg"></image>
+      <span class="title">这是一个商品</span>
+      <span class="money">¥150.00</span>
+      <span class="stock">剩：3/10</span>
+    </view>
+          <view class="card">
+      <image mode="widthFix"  src="../../image/2.jpg"></image>
+      <span class="title">这是一个商品</span>
+      <span class="money">¥150.00</span>
+      <span class="stock">剩：3/10</span>
+    </view>
+      <view class="card">
+      <image  mode="widthFix"  src="../../image/c.jpg"></image>
+      <span class="title">这是一个商品</span>
+      <span class="money">¥150.00</span>
+      <span class="stock">剩：3/10</span>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+/* pages/order/order.wxss */
+.hide{
+  display:none;
+}
+.icard{
+  margin-top: 5px;
+  display: block;
+}
+.fontstyle{
+  font-size: 12px;
+  color:  #696969
+}

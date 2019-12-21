@@ -1,0 +1,47 @@
+<!--pages/list/list.wxml-->
+<i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="tab1" count="13" title="在售产品"></i-tab>
+    <i-tab key="tab2" count="3" title="已售罄"></i-tab>
+    <i-tab key="tab3" title="无效"></i-tab>
+    <i-tab key="tab4" title="新增"></i-tab>
+</i-tabs>
+<view class="{{isShow1}}">
+<i-cell-group>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+</i-cell-group>
+</view>
+<view class="{{isShow2}}">
+<i-cell-group>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+</i-cell-group>
+</view>
+<view class="{{isShow3}}">
+<i-cell-group>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+</i-cell-group>
+</view>
+<view class="{{isShow4}}">
+<i-panel title="基础用法">
+    <i-input id="value1" bind:blur="setValue" value="{{ value1 }}" title="产品标题" autofocus placeholder="名字" />
+    <i-input id="value2" bind:blur="setValue" value="{{ value2 }}" type="number" title="销售价" placeholder="请输入价格" />
+    <i-input id="value3" bind:blur="setValue" value="{{ value3 }}" type="number" title="结算价" placeholder="请输入价格" />
+    <i-input id="value4" bind:blur="setValue" value="{{ value4 }}" type="number" title="库存数" placeholder="请输入数量" />
+    <i-input id="value5" bind:blur="setValue" value="{{ value5 }}" type="textarea" title="产品描述" placeholder="请输入详细描述(最多50字)" maxlength="50" />
+</i-panel>
+<view style="width:100px;height:auto;padding-left:20px;padding-top:20px;">
+<image bindtap="uploadImg" mode="widthFix" src="{{picurl}}"></image>
+</view>
+<view style="width:30%;padding-left:15%;float:left;"><i-button type="success" form-type="submit"	bind:click="Save">保存</i-button></view>
+<view style="width:30%;padding-left:10%;float:left;"><i-button bind:click="resetValue">重置</i-button></view>
+</view>

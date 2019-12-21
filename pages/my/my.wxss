@@ -1,0 +1,14 @@
+/* pages/my/my.wxss */
+.head{
+  width: 20%;
+  height: 20%;
+  margin-left: 40%;
+  border-radius:50%;
+}
+.box{
+  width: 100%;
+  text-align: center;
+}
+.hide{
+  display: none;
+}
