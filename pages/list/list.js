@@ -1,4 +1,5 @@
 // pages/list/list.js
+var app = getApp()
 Page({
 
   /**
@@ -6,7 +7,7 @@ Page({
    */
   data: {
     current: 'tab1',
-    picurl:"../../image/btn.png",
+    picurl: "../../image/btn.png",
     isShow1: "show",
     isShow2: "hide",
     isShow3: "hide",
@@ -16,23 +17,26 @@ Page({
     value3: null,
     value4: null,
     value5: null,
-    commodity:{
-      Id:0,
-      Title:null,
-      Price:0,
-      SalePrice:0,
-      Total:0,
-      ImgUrl:"",
-      Describe:""
-    }
+    commodity: {
+      Id: "",
+      Title: null,
+      Price: "",
+      SalePrice: "",
+      Total: "",
+      ImgUrl: "",
+      Describe: ""
+    },
+    list:[]
   },
-  setValue:function(e){
+  setValue: function(e) {
     let key = `${e.target.id}`;
     this.setData({
       [key]: e.detail.detail.value
     });
   },
-  handleChange({ detail }) {
+  handleChange({
+    detail
+  }) {
     var tab = detail.key;
     if (tab == "tab1") {
       this.data.isShow1 = "show";
@@ -66,46 +70,46 @@ Page({
       isShow4: this.data.isShow4,
     });
   },
-  showok: function () {
+  showok: function() {
     wx.showToast({
       title: '成功',
       icon: 'success',
       duration: 2000
     })
   },
-  showfail: function () {
+  showfail: function() {
     wx.showToast({
       title: '失败',
       icon: 'fail',
       duration: 2000
     })
   },
-  Save:function(){
+  Save: function() {
     this.data.commodity.Title = this.data.value1;
     this.data.commodity.Price = this.data.value2;
     this.data.commodity.SalePrice = this.data.value3;
     this.data.commodity.ImgUrl = this.data.picurl;
     this.data.commodity.Total = this.data.value4;
     this.data.commodity.Describe = this.data.value5;
+    var that = this;
     wx.request({
       //项目的真正接口，通过字符串拼接方式实现
-      url: "http://localhost:5001/api/Main/AddCommondity",
-      header: {
-        "content-type": "application/json;charset=UTF-8"
-      },
+      url: app.globalData.requestUrl+"Main/AddCommondity",
       data: this.data.commodity,
       method: 'POST',
-      success: function (res) {
+      success: function(res) {
+        console.log(res)
         //参数值为res.data,直接将返回的数据传入
-        this.showok();
-        this.resetValue();
+        that.showok();
+        that.resetValue();
       },
-      fail: function () {
-        showfail();
+      fail: function(e) {
+        console.log(e)
+        that.showfail();
       },
     });
   },
-  resetValue:function(){
+  resetValue: function() {
     this.setData({
       picurl: "../../image/btn.png",
       value1: null,
@@ -118,16 +122,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
-  uploadImg(){
+  uploadImg() {
     var that = this;
     wx.chooseImage({
       count: 3, // 最多可以选择的图片张数，默认9
       sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
       sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
-      success: function (res) {
+      success: function(res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths;
         // wx.showToast({
@@ -137,7 +141,7 @@ Page({
         //   duration: 10000
         // });
         for (var i = 0; i < tempFilePaths.length; i++) {
-          that.data.picurl=tempFilePaths[i];
+          that.data.picurl = tempFilePaths[i];
         }
         console.log(that.data.picurl);
         that.setData({
@@ -149,49 +153,64 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
+  onShow: function() {
+    wx.request({
+      //项目的真正接口，通过字符串拼接方式实现
+      url: app.globalData.requestUrl + "Main/AddCommondity",
+      data: this.data.commodity,
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+        //参数值为res.data,直接将返回的数据传入
+        that.showok();
+        that.resetValue();
+      },
+      fail: function (e) {
+        console.log(e)
+        that.showfail();
+      },
+    });
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

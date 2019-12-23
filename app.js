@@ -35,7 +35,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    requestUrl:"http://192.168.0.108:5001/api/"
   },
 
   onShow: function () {

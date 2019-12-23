@@ -7,13 +7,7 @@
 </i-tabs>
 <view class="{{isShow1}}">
 <i-cell-group>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
-    <i-cell title="产品标题" value="详细信息" is-link></i-cell>
+    <i-cell wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" title="{{item.Name}}" value="{{item.Message}}" is-link></i-cell>
 </i-cell-group>
 </view>
 <view class="{{isShow2}}">
@@ -33,7 +27,7 @@
 </view>
 <view class="{{isShow4}}">
 <i-panel title="基础用法">
-    <i-input id="value1" bind:blur="setValue" value="{{ value1 }}" title="产品标题" autofocus placeholder="名字" />
+    <i-input id="value1" bind:blur="setValue" value="{{ value1 }}" title="产品标题" placeholder="名字" />
     <i-input id="value2" bind:blur="setValue" value="{{ value2 }}" type="number" title="销售价" placeholder="请输入价格" />
     <i-input id="value3" bind:blur="setValue" value="{{ value3 }}" type="number" title="结算价" placeholder="请输入价格" />
     <i-input id="value4" bind:blur="setValue" value="{{ value4 }}" type="number" title="库存数" placeholder="请输入数量" />
