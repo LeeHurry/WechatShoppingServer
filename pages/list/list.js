@@ -163,9 +163,9 @@ Page({
   onShow: function() {
     wx.request({
       //项目的真正接口，通过字符串拼接方式实现
-      url: app.globalData.requestUrl + "Main/AddCommondity",
+      url: app.globalData.requestUrl + "Main/Get",
       data: this.data.commodity,
-      method: 'POST',
+      method: 'GET',
       success: function (res) {
         console.log(res)
         //参数值为res.data,直接将返回的数据传入
