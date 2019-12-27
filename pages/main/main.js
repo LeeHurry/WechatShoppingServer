@@ -1,34 +1,52 @@
 // pages/main/main.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[],
+    url: app.globalData.imageUrl
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('App 2')
+    this.onloadData();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log('App 1')
+    this.onloadData();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('App 3')
+    this.onloadData();
   },
-
+  onloadData:function(){
+    var that = this;
+    wx.request({
+      //项目的真正接口，通过字符串拼接方式实现
+      url: app.globalData.requestUrl + "Main/GetCommodityList",
+      method: 'GET',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          list: res.data
+        });
+      },
+      fail: function (e) {
+        console.log(e)
+      },
+    });
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

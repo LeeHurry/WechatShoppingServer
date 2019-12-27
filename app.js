@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     console.log('App Launch')
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -36,13 +36,17 @@ App({
   },
   globalData: {
     userInfo: null,
-    requestUrl:"http://192.168.0.108:5001/api/"
+    //requestUrl:"http://10.102.142.201:5005/api/",
+    //imageUrl: "http://10.102.142.201:5005/",
+    requestUrl: "http://122.51.72.85:1001/api/",
+    imageUrl: "http://122.51.72.85:1001/",
+    //requestUrl: "http://localhost:5000/api/",
   },
 
-  onShow: function () {
+  onShow: function() {
     console.log('App Show')
   },
-  onHide: function () {
+  onHide: function() {
     console.log('App Hide')
   }
 })

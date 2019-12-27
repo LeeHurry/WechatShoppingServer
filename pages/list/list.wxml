@@ -7,7 +7,7 @@
 </i-tabs>
 <view class="{{isShow1}}">
 <i-cell-group>
-    <i-cell wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" title="{{item.Name}}" value="{{item.Message}}" is-link></i-cell>
+    <i-cell wx:for="{{list}}" wx:for-index="idx" wx:for-item="item" id = "{{item.id}}" title="{{item.title}}" value="{{item.stock}}" is-link></i-cell>
 </i-cell-group>
 </view>
 <view class="{{isShow2}}">
