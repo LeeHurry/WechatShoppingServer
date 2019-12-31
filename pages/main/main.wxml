@@ -2,12 +2,24 @@
   已经回来啦，理货中，下次起飞日期待定哟~
 </i-notice-bar>
 <view class="box">
-  <view class='left-box' wx:for="{{list}}" wx:for-index="idx" wx:for-item="item">
-    <view class="card">
-      <image mode="widthFix" src="{{url + item.imgUrl}}"></image>
-      <span class="title">{{item.title}}</span>
-      <span class="money">¥{{item.price}}</span>
-      <span class="stock">{{item.stock}}</span>
+  <view class='left-box'>
+    <view class="card" wx:for="{{list.leftList}}" wx:for-index="idx" wx:for-item="item">
+      <view id="{{item.id}}" bindtap="showDetail">
+        <image mode="widthFix" src="{{url + item.imgUrl}}"></image>
+        <span class="title">{{item.title}}</span>
+        <span class="money">¥{{item.price}}</span>
+        <span class="stock">{{item.stock}}</span>
+      </view>
+    </view>
+  </view>
+  <view class='right-box'>
+    <view class="card" wx:for="{{list.rightList}}" wx:for-index="idx" wx:for-item="item">
+      <view id="{{item.id}}" bindtap="showDetail">
+        <image mode="widthFix" src="{{url + item.imgUrl}}"></image>
+        <span class="title">{{item.title}}</span>
+        <span class="money">¥{{item.price}}</span>
+        <span class="stock">{{item.stock}}</span>
+      </view>
     </view>
   </view>
 </view>

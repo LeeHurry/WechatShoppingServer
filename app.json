@@ -5,7 +5,8 @@
     "pages/main/main",
     "pages/my/my",
     "pages/edit/edit",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

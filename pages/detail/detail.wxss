@@ -1,0 +1,33 @@
+/* pages/detail/detail.wxss */
+.img{
+  width:96%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+.title{
+  padding: 15px;
+  float:left;
+  font-weight: bolder;
+}
+.money{
+  display: block;
+  text-align: right;
+  color:red;
+  font-weight:bolder;
+  font-size: 19px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+.desc{
+  padding-top:10px;
+  padding-left:2%;
+  padding-right: 2%;
+}
+.stock{
+  display: block;
+  text-align: right;
+  color:#4b4a4b;
+  font-size: 12px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}

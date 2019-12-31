@@ -1,0 +1,17 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <image class="img" mode="widthFix" src="{{entity.imgUrl}}"></image>
+  <i-panel title="">
+    <view class="title">{{entity.title}}</view>
+    <span class="money">¥{{entity.price}}</span>
+    <span class="stock">{{entity.stock}}</span>
+  </i-panel>
+  <view class="desc">{{entity.describe}}</view>
+</view>
+<i-panel title="" style="position:fixed;bottom:0;width:100%;font-size:13px;">
+  <view style="padding: 15px;text-align:right;float:left;">单价：¥{{sum}} </view>
+  <view style="padding-top:15px;text-align:right;float:left;">数量：
+    <i-icon size="22" type="unfold" bindtap="cut" /> {{buy}}
+    <i-icon size="22" type="packup" bindtap="add" /> </view>
+  <i-button style="float:right;width:150px;" bind:click="handleClick" type="warning" shape="circle" size="small">订购</i-button>
+</i-panel>
