@@ -57,6 +57,33 @@ Page({
       sum:this.data.vprice * this.data.buy
     })
   },
+  submitOrder:function(e){
+    var that = this ;
+    console.log(e.detail.userInfo)
+    wx.request({
+      url: app.globalData.requestUrl + 'Order/CreateOrder', //仅为示例，并非真实的接口地址
+      data: {
+        OpenId: app.globalData.openid,
+        CommodityId:that.data.id,
+        Count: that.data.buy,
+        NickName: e.detail.userInfo.nickName
+      },
+      method:"POST",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        if(res.data.code == "10000"){
+          wx.showToast({
+            title: '成功，可在订单查看详情',
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

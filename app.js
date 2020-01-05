@@ -12,7 +12,6 @@ App({
     wx.login({
       success(res) {
         if (res.code) {
-          console.log(res);
           //发起网络请求
           wx.request({
             url: that.globalData.requestUrl +'Login/GetOpenId?code='+res.code,
@@ -56,9 +55,9 @@ App({
     openid:"",
     //requestUrl:"http://10.102.142.201:5005/api/",
     //imageUrl: "http://10.102.142.201:5005/",
-    requestUrl: "https://www.kikiestore.com/api/",
+    //requestUrl: "https://www.kikiestore.com/api/",
     imageUrl: "https://www.kikiestore.com/",
-    //requestUrl: "http://localhost:5000/api/",
+    requestUrl: "http://localhost:5000/api/",
   },
 
   onShow: function() {

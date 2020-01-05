@@ -13,5 +13,5 @@
   <view style="padding-top:15px;text-align:right;float:left;">数量：
     <i-icon size="22" type="unfold" bindtap="cut" /> {{buy}}
     <i-icon size="22" type="packup" bindtap="add" /> </view>
-  <i-button style="float:right;width:150px;" bind:click="handleClick" type="warning" shape="circle" size="small">订购</i-button>
+  <i-button style="float:right;width:150px;" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="submitOrder"  type="warning"  shape="circle" size="small">订购</i-button>
 </i-panel>
