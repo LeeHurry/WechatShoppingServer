@@ -1,4 +1,5 @@
 // pages/order/order.js
+var app = getApp()
 Page({
 
   /**
@@ -8,30 +9,24 @@ Page({
     current: 'tab1',
     isShow1:"show",
     isShow2:"hide",
-    isShow3:"hide",
+    left:[],
+    right:[],
+    baseImgUrl: app.globalData.imageUrl
   },
   handleChange({ detail }) {
     var tab = detail.key;
     if (tab == "tab1"){
       this.data.isShow1 ="show";
       this.data.isShow2 = "hide";
-      this.data.isShow3 = "hide";
     }
     if (tab == "tab2") {
       this.data.isShow1 = "hide";
       this.data.isShow2 = "show";
-      this.data.isShow3 = "hide";
-    }
-    if (tab == "tab3") {
-      this.data.isShow1 = "hide";
-      this.data.isShow2 = "hide";
-      this.data.isShow3 = "show";
     }
     this.setData({
       current: detail.key,
       isShow1:this.data.isShow1,
-      isShow2:this.data.isShow2,
-      isShow3:this.data.isShow3,
+      isShow2:this.data.isShow2
     });
   },
   handleClick:function(){
@@ -57,7 +52,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("order");
+    var that = this;
+    console.log("order1");
+    wx.request({
+      url: app.globalData.requestUrl + "Order/GetOrderList?openid=" + app.globalData.openid,
+      success(res) {
+        console.log(res);
+        that.setData({
+          left: res.data.result.statusI_OrderList,
+          right: res.data.result.statusII_OrderList
+        })
+      }
+    })
   },
 
   /**
